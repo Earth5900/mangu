@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music -->
+<audio id="bgMusic" loop>
+  <source src="perfect.mp3" type="audio/mpeg">
+</audio>
+
+<p class="tap" onclick="playMusic()">🎵 Tap here for music</p>
+
+
+  <!-- Floating Hearts -->
+  <div class="hearts"></div>
+
+  <div class="card">
+    <h1>Hey You 💕</h1>
+
+    <p class="message">
+      I don’t know when it started…  
+      but talking to you became my favorite part of my life💖🙈 .  
+      So I made this little thing,  
+      just to make you Happy...! hehe😁 🥰
+    </p>
+
+    <h2>Will you be my Valentine? 🌹</h2>
+
+    <div class="buttons">
+      <button onclick="yesClick()">Yes 💖</button>
+      <button id="noBtn" onmouseover="moveNo()">No 😶</button>
+    </div>
+
+    <p id="result"></p>
+  </div>
+
+  <script>
+    function yesClick() {
+      document.getElementById("result").innerHTML =
+        "YAYYY 😍❤️ I Love You Manguu... 💕";
+    }
+
+    function moveNo() {
+      const btn = document.getElementById("noBtn");
+      btn.style.position = "absolute";
+      btn.style.top = Math.random() * 80 + "%";
+      btn.style.left = Math.random() * 80 + "%";
+    }
+
+    // Create floating hearts
+    const hearts = document.querySelector('.hearts');
+    for (let i = 0; i < 20; i++) {
+      let heart = document.createElement('span');
+      heart.innerHTML = '❤️';
+      heart.style.left = Math.random() * 100 + '%';
+      heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      hearts.appendChild(heart);
+    }
+  </script>
+
+</body>
+</html>
